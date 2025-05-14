@@ -1,13 +1,20 @@
-import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
-//import viteLogo from '/vite.svg'
-import './App.css'
-import { FaGithub, FaLinkedin, FaTwitter, FaArrowUp, FaInstagram } from "react-icons/fa";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from "react";
+import { FaGithub, FaLinkedin, FaTwitter, FaArrowUp, FaInstagram, FaGlobe } from "react-icons/fa";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { SlowMo } from "gsap/EasePack";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// ScrollSmoother requires ScrollTrigger
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { SplitText } from "gsap/SplitText";
 
+gsap.registerPlugin(useGSAP,ScrollTrigger,ScrollSmoother,ScrollToPlugin,SplitText,SlowMo);
+    
 
 export default function PortfolioPage() {
   const [showButton, setShowButton] = useState(false);
+  const [language, setLanguage] = useState("es");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,51 +28,88 @@ export default function PortfolioPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const toggleLanguage = () => {
+    const newLang = language === "en" ? "es" : "en";
+    gsap.to("#language-button", {
+      rotationY: 180,
+      duration: 0.6,
+      ease: "power2.inOut",
+      onComplete: () => setLanguage(newLang),
+    });
+  };
+
+  const text = {
+    home: language === "en" ? "Home" : "Inicio",
+    about: language === "en" ? "About Me" : "Sobre mí",
+    creative: language === "en" ? "Creative Work" : "Trabajo Creativo",
+    professional: language === "en" ? "Professional Work" : "Trabajo Profesional",
+    contact: language === "en" ? "Contact" : "Contacto",
+    welcome: language === "en" ? "Welcome to My Portfolio" : "Bienvenido a Mi Portafolio",
+    aboutDesc: language === "en" ? "This is a brief introduction about who I am, my background, and what I do." : "Esta es una breve introducción sobre quién soy, mi experiencia y lo que hago.",
+    creativeDesc: language === "en" ? "Showcase of my artistic, design, or multimedia projects." : "Exposición de mis proyectos artísticos, de diseño o multimedia.",
+    professionalDesc: language === "en" ? "Highlight of serious or client-based projects, job experience, or case studies." : "Destacado de proyectos serios o para clientes, experiencia laboral o estudios de caso.",
+    contactDesc: language === "en" ? "Contact Me" : "Contáctame",
+    name: language === "en" ? "Your Name" : "Tu Nombre",
+    email: language === "en" ? "Your Email" : "Tu Correo",
+    message: language === "en" ? "Your Message" : "Tu Mensaje",
+    send: language === "en" ? "Send" : "Enviar",
+  };
+
   return (
     <div className="font-sans scroll-smooth relative bg-gradient-to-b from-sky-300 via-blue-700 to-orange-400 text-white min-h-screen">
       {/* Navbar */}
-      <nav className="fixed top-0 w-full bg-white shadow z-50 text-black">
-        <ul className="flex flex-wrap justify-center md:justify-around py-4 text-sm md:text-base">
-          <li className="mx-2 md:mx-0"><a href="#home" className="hover:text-blue-500">Home</a></li>
-          <li className="mx-2 md:mx-0"><a href="#about" className="hover:text-blue-500">About Me</a></li>
-          <li className="mx-2 md:mx-0"><a href="#creative" className="hover:text-blue-500">Creative Work</a></li>
-          <li className="mx-2 md:mx-0"><a href="#professional" className="hover:text-blue-500">Professional Work</a></li>
-          <li className="mx-2 md:mx-0"><a href="#contact" className="hover:text-blue-500">Contact</a></li>
+      <nav className="fixed top-0 w-full bg-transparent shadow z-50 text-blue-950">
+        <ul className="flex flex-wrap justify-center md:justify-around py-4 text-sm md:text-base items-center">
+          <li className="mx-2 md:mx-0"><img src="src/assets/images/logo-dark.png" alt="Logo in adrk mode" /></li>
+          <li className="mx-2 md:mx-0"><a href="#home" className="hover:text-blue-500">{text.home}</a></li>
+          <li className="mx-2 md:mx-0"><a href="#about" className="hover:text-blue-500">{text.about}</a></li>
+          <li className="mx-2 md:mx-0"><a href="#creative" className="hover:text-blue-500">{text.creative}</a></li>
+          <li className="mx-2 md:mx-0"><a href="#professional" className="hover:text-blue-500">{text.professional}</a></li>
+          <li className="mx-2 md:mx-0"><a href="#contact" className="hover:text-blue-500">{text.contact}</a></li>
+          <li className="mx-2 md:mx-0">
+            <button
+              id="language-button"
+              onClick={toggleLanguage}
+              className="flex items-center space-x-1 text-white text-sm hover:text-blue-500 transition duration-300 ease-in-out">
+              <FaGlobe />
+              <span>{language === "es" ? "EN" : "ES"}</span>
+            </button>
+          </li>
         </ul>
       </nav>
 
       <main className="pt-24 space-y-20 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32">
         {/* Home Section */}
         <section id="home" className="min-h-screen flex items-center justify-center bg-transparent text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">Welcome to My Portfolio</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">{text.welcome}</h1>
         </section>
 
         {/* About Me Section */}
         <section id="about" className="min-h-screen py-20 bg-transparent">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">About Me</h2>
-          <p className="text-base sm:text-lg max-w-3xl mx-auto">This is a brief introduction about who I am, my background, and what I do.</p>
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">{text.about}</h2>
+          <p className="text-base sm:text-lg max-w-3xl mx-auto">{text.aboutDesc}</p>
         </section>
 
         {/* Creative Work Section */}
         <section id="creative" className="min-h-screen py-20 bg-transparent">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Creative Work</h2>
-          <p className="text-base sm:text-lg max-w-3xl mx-auto">Showcase of my artistic, design, or multimedia projects.</p>
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">{text.creative}</h2>
+          <p className="text-base sm:text-lg max-w-3xl mx-auto">{text.creativeDesc}</p>
         </section>
 
         {/* Professional Work Section */}
         <section id="professional" className="min-h-screen py-20 bg-transparent">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Professional Work</h2>
-          <p className="text-base sm:text-lg max-w-3xl mx-auto">Highlight of serious or client-based projects, job experience, or case studies.</p>
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">{text.professional}</h2>
+          <p className="text-base sm:text-lg max-w-3xl mx-auto">{text.professionalDesc}</p>
         </section>
 
         {/* Contact Form Section */}
         <section id="contact" className="min-h-screen py-20 bg-transparent text-center">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Contact Me</h2>
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">{text.contactDesc}</h2>
           <form className="space-y-4 max-w-xl mx-auto text-black px-4">
-            <input type="text" placeholder="Your Name" className="w-full p-2 border rounded" />
-            <input type="email" placeholder="Your Email" className="w-full p-2 border rounded" />
-            <textarea placeholder="Your Message" className="w-full p-2 border rounded h-32"></textarea>
-            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Send</button>
+            <input type="text" placeholder={text.name} className="w-full p-2 border rounded" />
+            <input type="email" placeholder={text.email} className="w-full p-2 border rounded" />
+            <textarea placeholder={text.message} className="w-full p-2 border rounded h-32"></textarea>
+            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">{text.send}</button>
           </form>
         </section>
       </main>
@@ -102,5 +146,3 @@ export default function PortfolioPage() {
     </div>
   );
 }
-
-

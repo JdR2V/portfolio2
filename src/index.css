@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 @import "tailwindcss";
+
+@theme {
+  --font-bebas-neue: "Bebas Neue", "sans-serif";
+}
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -68,3 +74,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+

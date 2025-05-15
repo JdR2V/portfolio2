@@ -8,6 +8,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { SplitText } from "gsap/SplitText";
+import logoDark from "./assets/images/logo-dark.png";
+
+
 
 gsap.registerPlugin(useGSAP,ScrollTrigger,ScrollSmoother,ScrollToPlugin,SplitText,SlowMo);
     
@@ -28,10 +31,20 @@ export default function PortfolioPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      gsap.to(window, {
+        scrollTo: { y: section, autoKill: false },
+        duration: 1,
+        ease: "power2.inOut",
+      });
+    }
+  }
+
   const toggleLanguage = () => {
     const newLang = language === "en" ? "es" : "en";
     gsap.to("#language-button", {
-      rotationY: 180,
       duration: 0.6,
       ease: "power2.inOut",
       onComplete: () => setLanguage(newLang),
@@ -56,16 +69,16 @@ export default function PortfolioPage() {
   };
 
   return (
-    <div className="font-sans scroll-smooth relative bg-gradient-to-b from-sky-300 via-blue-700 to-orange-400 text-white min-h-screen">
+    <div className="font-sans scroll-smooth flex-col bg-gradient-to-b from-sky-300 via-blue-700 to-orange-400 text-white min-h-screen min-w-screen">
       {/* Navbar */}
-      <nav className="fixed top-0 w-full bg-transparent shadow z-50 text-blue-950">
+      <nav className="fixed top-0 w-full bg-transparent z-50 text-blue-950">
         <ul className="flex flex-wrap justify-center md:justify-around py-4 text-sm md:text-base items-center">
-          <li className="mx-2 md:mx-0"><img src="src/assets/images/logo-dark.png" alt="Logo in adrk mode" /></li>
-          <li className="mx-2 md:mx-0"><a href="#home" className="hover:text-blue-500">{text.home}</a></li>
-          <li className="mx-2 md:mx-0"><a href="#about" className="hover:text-blue-500">{text.about}</a></li>
-          <li className="mx-2 md:mx-0"><a href="#creative" className="hover:text-blue-500">{text.creative}</a></li>
-          <li className="mx-2 md:mx-0"><a href="#professional" className="hover:text-blue-500">{text.professional}</a></li>
-          <li className="mx-2 md:mx-0"><a href="#contact" className="hover:text-blue-500">{text.contact}</a></li>
+          
+          <li className="mx-2 md:mx-0"><a href="#home" onClick={(e) => {e.preventDefault(); scrollToSection("home");}} ><img className="h-10 w-auto" src={logoDark} alt="Logo in dark mode" /></a></li>
+          <li className="mx-2 md:mx-0"><a href="#about" onClick={(e) => {e.preventDefault(); scrollToSection("about");}} className="hover:text-blue-500"><span className="text-white">{text.about}</span></a></li>
+          <li className="mx-2 md:mx-0"><a href="#creative" onClick={(e) => {e.preventDefault(); scrollToSection("creative");}} className="hover:text-blue-500"><span className="text-white">{text.creative}</span></a></li>
+          <li className="mx-2 md:mx-0"><a href="#professional" onClick={(e) => {e.preventDefault(); scrollToSection("professional");}} className="hover:text-blue-500"><span className="text-white">{text.professional}</span></a></li>
+          <li className="mx-2 md:mx-0"><a href="#contact" onClick={(e) => {e.preventDefault(); scrollToSection("contact");}} className="hover:text-blue-500"><span className="text-white">{text.contact}</span></a></li>
           <li className="mx-2 md:mx-0">
             <button
               id="language-button"
@@ -103,7 +116,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* Contact Form Section */}
-        <section id="contact" className="min-h-screen py-20 bg-transparent text-center">
+        <section id="contact" className="min-h-screen py-40 bg-transparent text-center">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-4">{text.contactDesc}</h2>
           <form className="space-y-4 max-w-xl mx-auto text-black px-4">
             <input type="text" placeholder={text.name} className="w-full p-2 border rounded" />

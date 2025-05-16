@@ -9,13 +9,19 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { SplitText } from "gsap/SplitText";
 import logoDark from "./assets/images/logo-dark.png";
 
-//Importing Components
+//Importing Components English
 import Welcome from "./Components/welcome";
-import Bienvenidos from "./Components/bienvenidos";
 import AboutMe from "./Components/aboutMe";
 import Contact from "./Components/contact";
 import Professional from "./Components/professional";
 import Works from "./Components/work";
+
+//Importing Components Spanish
+import Bienvenidos from "./Components/bienvenidos";
+import SobreMi from "./Components/sobreMi";
+import Profesional from "./Components/profesional";
+import Trabajos from "./Components/trabajos";
+import Contacto from "./Components/contacto";
 
 gsap.registerPlugin(useGSAP,ScrollTrigger,ScrollSmoother,ScrollToPlugin,SplitText,SlowMo);
     
@@ -90,14 +96,11 @@ export default function PortfolioPage() {
     professional: language === "en" ? "Professional Work" : "Trabajo Profesional",
     contact: language === "en" ? "Contact" : "Contacto",
     welcome: language === "en" ? <Welcome /> : <Bienvenidos />,
-    aboutDesc: language === "en" ? "This is a brief introduction about who I am, my background, and what I do." : "Esta es una breve introducción sobre quién soy, mi experiencia y lo que hago.",
-    creativeDesc: language === "en" ? "Showcase of my artistic, design, or multimedia projects." : "Exposición de mis proyectos artísticos, de diseño o multimedia.",
-    professionalDesc: language === "en" ? "Highlight of serious or client-based projects, job experience, or case studies." : "Destacado de proyectos serios o para clientes, experiencia laboral o estudios de caso.",
-    contactDesc: language === "en" ? "Contact Me" : "Contáctame",
-    name: language === "en" ? "Your Name" : "Tu Nombre",
-    email: language === "en" ? "Your Email" : "Tu Correo",
-    message: language === "en" ? "Your Message" : "Tu Mensaje",
-    send: language === "en" ? "Send" : "Enviar",
+    aboutDesc: language === "en" ? <AboutMe />: <SobreMi />,
+    creativeDesc: language === "en" ? <Works /> : <Trabajos />,
+    professionalDesc: language === "en" ? <Professional /> : <Profesional />,
+    contactDesc: language === "en" ? <Contact /> : <Contacto />,
+    
   };
 
 
@@ -155,22 +158,22 @@ export default function PortfolioPage() {
 
         {/* About Me Section */}
         <section id="about" className="min-h-screen py-60 bg-transparent">
-         <AboutMe />
+          {text.aboutDesc}
         </section>
 
         {/* Creative Work Section */}
         <section id="creative" className="min-h-screen py-60 bg-transparent">
-          <Works />
+          {text.creativeDesc}
         </section>
 
         {/* Professional Work Section */}
         <section id="professional" className="min-h-screen py-20 bg-transparent">
-          <Professional />
+          {text.professionalDesc}
         </section>
 
         {/* Contact Form Section */}
         <section id="contact" className="min-h-screen py-40 bg-transparent text-center">
-          <Contact />
+          {text.contactDesc}
         </section>
       </main>
 

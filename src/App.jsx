@@ -11,6 +11,7 @@ import logoDark from "./assets/images/logo-dark.png";
 
 //Importing Components
 import Welcome from "./Components/welcome";
+import Bienvenidos from "./Components/bienvenidos";
 import AboutMe from "./Components/aboutMe";
 import Contact from "./Components/contact";
 import Professional from "./Components/professional";
@@ -21,8 +22,13 @@ gsap.registerPlugin(useGSAP,ScrollTrigger,ScrollSmoother,ScrollToPlugin,SplitTex
 
 export default function PortfolioPage() {
   const [showButton, setShowButton] = useState(false);
-  const [language, setLanguage] = useState("es");
+  const savedLanguage = localStorage.getItem("language") || "es";
+  const [language, setLanguage] = useState(savedLanguage);
   const circleRef = useRef(null);
+  
+
+
+
 
  {/* Scroll to top button visibility based on scroll position */} 
   useEffect(() => {
@@ -38,7 +44,7 @@ export default function PortfolioPage() {
   };
 
 
-  {/* Smooth scrolling to sections */}
+{/* Smooth scrolling to sections */}
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -50,26 +56,30 @@ export default function PortfolioPage() {
     }
   }
 
+{/* Language toggle function */}  
   const toggleLanguage = () => {
     const newLang = language === "en" ? "es" : "en";
+    setLanguage(newLang);
+    localStorage.setItem("language", newLang);
     const circle = circleRef.current;
     
     
     gsap.to(circle, {
       scale: 100,
-      duration: 0.8,
+      duration: 0.09,
       ease: "power2.easeInOut",
       onComplete: () => {
        
         setLanguage(newLang)
         gsap.to(circle, {
           scale: 0,
-          duration: 0.8,
+          duration: 0.9,
           ease: "power2.inOut",
         })
       }
     })
   };
+
 
   {/* Text content based on language */}
 
@@ -79,7 +89,7 @@ export default function PortfolioPage() {
     creative: language === "en" ? "Creative Work" : "Trabajo Creativo",
     professional: language === "en" ? "Professional Work" : "Trabajo Profesional",
     contact: language === "en" ? "Contact" : "Contacto",
-    welcome: language === "en" ? "Welcome to My Portfolio" : "Bienvenido a Mi Portafolio",
+    welcome: language === "en" ? <Welcome /> : <Bienvenidos />,
     aboutDesc: language === "en" ? "This is a brief introduction about who I am, my background, and what I do." : "Esta es una breve introducción sobre quién soy, mi experiencia y lo que hago.",
     creativeDesc: language === "en" ? "Showcase of my artistic, design, or multimedia projects." : "Exposición de mis proyectos artísticos, de diseño o multimedia.",
     professionalDesc: language === "en" ? "Highlight of serious or client-based projects, job experience, or case studies." : "Destacado de proyectos serios o para clientes, experiencia laboral o estudios de caso.",
@@ -140,7 +150,7 @@ export default function PortfolioPage() {
       <main className="pt-24 space-y-20 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32">
         {/* Home Section */}
         <section id="home" className="min-h-screen flex items-center justify-center bg-transparent text-center">
-          <Welcome />
+          {text.welcome}
         </section>
 
         {/* About Me Section */}

@@ -10,6 +10,7 @@ import { SplitText } from "gsap/SplitText";
 import logoDark from "./assets/images/logo-dark.png";
 
 //Importing Components
+import Welcome from "./Components/welcome";
 import AboutMe from "./Components/aboutMe";
 import Contact from "./Components/contact";
 import Professional from "./Components/professional";
@@ -23,6 +24,7 @@ export default function PortfolioPage() {
   const [language, setLanguage] = useState("es");
   const circleRef = useRef(null);
 
+ {/* Scroll to top button visibility based on scroll position */} 
   useEffect(() => {
     const handleScroll = () => {
       setShowButton(window.scrollY > 300);
@@ -35,6 +37,8 @@ export default function PortfolioPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+
+  {/* Smooth scrolling to sections */}
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -67,6 +71,8 @@ export default function PortfolioPage() {
     })
   };
 
+  {/* Text content based on language */}
+
   const text = {
     home: language === "en" ? "Home" : "Inicio",
     about: language === "en" ? "About Me" : "Sobre mí",
@@ -85,28 +91,30 @@ export default function PortfolioPage() {
   };
 
 
+  {/* Actual content of the website */}
   return (
-    <div className="font-sans scroll-smooth flex-col bg-gradient-to-b from-sky-400 via-blue-700 to-amber-400 text-white min-h-screen min-w-screen">
+    <div className="font-sans scroll-smooth flex-col bg-gradient-to-b from-sky-400 via-blue-600 to-amber-400 text-white min-h-screen min-w-screen">
       {/* Navbar */}
       <nav className="fixed top-0 w-full bg-transparent z-50 text-blue-950">
         
-        {/* Logo */}
-          <span className="mx-2 md:mx-0"><a href="#home" onClick={(e) => {e.preventDefault(); scrollToSection("home");}} ><img className="h-30 w-auto px-150 py-4" src={logoDark} alt="Logo in dark mode" /></a></span>
         
         <ul className="flex flex-wrap justify-center md:justify-around py-4 text-sm md:text-base items-center">
-          {/* About Link */}
+        {/* Logo */}
+          <span className="mx-2 md:mx-0"><a href="#home" onClick={(e) => {e.preventDefault(); scrollToSection("home");}} ><img className="h-20/50 w-20/50 py-4" src={logoDark} alt="Logo in dark mode" /></a></span>
+
+        {/* About Link */}
           <li className="mx-2 md:mx-0"><a href="#about" onClick={(e) => {e.preventDefault(); scrollToSection("about");}} className="hover:text-blue-500"><span className="text-white">{text.about}</span></a></li>
 
-          {/* Creative Link */}
+        {/* Creative Link */}
           <li className="mx-2 md:mx-0"><a href="#creative" onClick={(e) => {e.preventDefault(); scrollToSection("creative");}} className="hover:text-blue-500"><span className="text-white">{text.creative}</span></a></li>
 
-          {/* Professional Link */}
+        {/* Professional Link */}
           <li className="mx-2 md:mx-0"><a href="#professional" onClick={(e) => {e.preventDefault(); scrollToSection("professional");}} className="hover:text-blue-500"><span className="text-white">{text.professional}</span></a></li>
 
-          {/* Contact Link */}
+        {/* Contact Link */}
           <li className="mx-2 md:mx-0"><a href="#contact" onClick={(e) => {e.preventDefault(); scrollToSection("contact");}} className="hover:text-blue-500"><span className="text-white">{text.contact}</span></a></li>
           
-          {/* Circle Animation to Change Language */}
+        {/* Circle Animation to Change Language */}
           <div ref={circleRef}
           className="absolute top-1/2 right-20 w-10 h-10 bg-blue-600 rounded-full transform -translate-x-1/2 -translate-y-1/2"
           style={{
@@ -132,7 +140,7 @@ export default function PortfolioPage() {
       <main className="pt-24 space-y-20 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32">
         {/* Home Section */}
         <section id="home" className="min-h-screen flex items-center justify-center bg-transparent text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">{text.welcome}</h1>
+          <Welcome />
         </section>
 
         {/* About Me Section */}
@@ -141,7 +149,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* Creative Work Section */}
-        <section id="creative" className="min-h-screen py-60 bg-transparent font-bebas-neue">
+        <section id="creative" className="min-h-screen py-60 bg-transparent">
           <Works />
         </section>
 
@@ -155,6 +163,8 @@ export default function PortfolioPage() {
           <Contact />
         </section>
       </main>
+
+
 
       {/* Scroll to Top Button */}
       {showButton && (

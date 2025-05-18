@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { FaGithub, FaLinkedin, FaTwitter, FaArrowUp, FaInstagram, FaGlobe } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaArrowUp, FaInstagram, FaGlobe, FaBehance } from "react-icons/fa";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SlowMo } from "gsap/EasePack";
@@ -8,6 +8,7 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { SplitText } from "gsap/SplitText";
 import logoDark from "./assets/images/logo-dark.png";
+
 
 //Importing Components English
 import Welcome from "./Components/welcome";
@@ -107,6 +108,7 @@ export default function PortfolioPage() {
   {/* Actual content of the website */}
   return (
     <div className="font-sans scroll-smooth flex-col bg-gradient-to-b from-sky-400 via-blue-600 to-amber-400 text-white min-h-screen min-w-screen">
+     
       {/* Navbar */}
       <nav className="fixed top-0 w-full bg-transparent z-50 text-blue-950">
         
@@ -201,6 +203,9 @@ export default function PortfolioPage() {
           </a>
           <a href="https://www.instagram.com/juandar2v/" target="_blank" rel="noopener noreferrer">
             <FaInstagram size={24} />
+          </a>
+          <a href="https://www.behance.net/JdR2" target="_blank" rel="noopener noreferrer">
+            <FaBehance size={24} />
           </a>
         </div>
         <p className="text-sm text-gray-500">© 2025 Juan Daniel Rubio. All rights reserved.</p>

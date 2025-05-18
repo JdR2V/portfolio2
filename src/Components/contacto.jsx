@@ -1,7 +1,7 @@
 function Contacto(){
     return (
         <div>
-            <h2 class="text-white text-5xl pb-4 font-bebas-neue">Contacto</h2>
+            <h2 class="text-white text-5xl pb-4 font-bebas-neue text-shadow-lg/30">Contacto</h2>
             <p>Si quieres saber mas sobre lo que hago, enviame un mensaje para estar en contacto.</p>
             
           <form className="space-y-4 max-w-xl mx-auto px-4 py-4">

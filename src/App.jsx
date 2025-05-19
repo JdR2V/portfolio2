@@ -163,55 +163,37 @@ export default function PortfolioPage() {
                       </li>
                   </ul>
               </div>
-
-              {/* El botón de idioma original fuera del UL, ahora solo visible en md+ */}
-              {/* Lo he integrado dentro de la estructura flex principal para que quede a la derecha del menú en desktop */}
-               {/* Puedes decidir si quieres el botón de idioma DENTRO del menú desplegable en móvil o FUERA (siempre visible).
-                  Mi código actual lo tiene FUERA del menú (siempre visible junto a la hamburguesa en móvil) y DENTRO del menú principal (visible en desktop).
-                  Si quieres que SOLO aparezca dentro del menú cuando se despliega en móvil, comenta el div con "md:hidden flex items-center" arriba y descomenta este li de abajo y sácalo del ul pero dentro del div contenedor del menú links:
-                */}
-                {/*
-                <li className="md:hidden mt-4"> // Solo visible en móvil, añadido margin-top
-                    <button
-                        id="language-button"
-                        onClick={() => { toggleLanguage(); closeMenu(); }} // Cerrar menú después de cambiar idioma
-                        className="flex items-center space-x-1 text-white text-sm hover:text-blue-500 transition duration-300 ease-in-out">
-                        <FaGlobe />
-                        <span> {language === "es" ? "EN" : "ES"}</span>
-                    </button>
-                </li>
-                */}
-
-
           </div>
-           {/* Círculo de Animación - Su posición podría necesitar ajustes finos con el menú móvil */}
-            {/* Asegúrate de que su z-index sea menor que el del menú si este se superpone */}
+
+
+          {/* Círculo de Animación */}
+            
            <div ref={circleRef}
-              className="absolute top-1/2 right-25 xl-right-50 lg:right-165 md:right-10 w-10 h-10 bg-blue-600 rounded-full transform -translate-y-1/2" // Ajustado right position si es necesario
+              className="absolute top-1/2 right-25 xl-right-50 lg:right-165 md:right-10 w-10 h-10 bg-blue-600 rounded-full transform -translate-y-1/2" 
               style={{
-                  transform: `scale(${circleRef.current ? circleRef.current.style.transform.replace('scale(', '').replace(')', '') : 0})`, // Mantener el estado de escala si es necesario
+                  transform: `scale(${circleRef.current ? circleRef.current.style.transform.replace('scale(', '').replace(')', '') : 0})`, 
                   background: "radial-gradient(circle at center, #00358a, #00ccff, #06c4ab)",
                   transition: "background 0.5s ease-in-out",
-                  zIndex: -1 // Asegura que esté detrás del contenido de la nav
+                  zIndex: -1 
               }}>
             </div>
       </nav>
 
-      {/* El contenido principal ahora debe tener un padding-top mayor para no quedar oculto por la navbar */}
+      
       {/* Ajusta `pt-24` según la altura final de tu navbar en desktop */}
       <main className="pt-24 space-y-20 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32">
         {/* Home Section */}
-        <section id="home" className="min-h-screen flex items-center justify-center bg-transparent text-center">
+        <section id="home" className="min-h-screen flex items-center justify-center bg-transparent text-center py-20">
           {text.welcome}
         </section>
 
         {/* About Me Section */}
-        <section id="about" className="min-h-screen py-60 bg-transparent">
+        <section id="about" className="min-h-screen py-30 bg-transparent">
           {text.aboutDesc}
         </section>
 
         {/* Creative Work Section */}
-        <section id="creative" className="min-h-screen py-60 bg-transparent">
+        <section id="creative" className="min-h-screen py-30 bg-transparent">
           {text.creativeDesc}
         </section>
 
@@ -221,7 +203,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* Contact Form Section */}
-        <section id="contact" className="min-h-screen py-40 bg-transparent text-center">
+        <section id="contact" className="min-h-screen py-30 bg-transparent text-center">
           {text.contactDesc}
         </section>
       </main>
@@ -240,7 +222,7 @@ export default function PortfolioPage() {
       )}
 
       {/* Footer */}
-      <footer className="bg-white text-center py-6 shadow-inner text-black">
+      <footer className="bg-white text-center  py-6 shadow-inner text-black">
         <div className="flex justify-center space-x-6 mb-2">
           <a href="https://github.com/JdR2V" target="_blank" rel="noopener noreferrer">
             <FaGithub size={24} />

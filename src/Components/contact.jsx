@@ -1,7 +1,7 @@
 function Contact(){
     return (
         <div>
-            <h2 className="text-white text-5xl pb-4 font-bebas-neue text-shadow-lg/30">Contact</h2>
+            <h2 className="text-white text-5xl font-bebas-neue text-shadow-lg/30">Contact</h2>
             <p>Let's chat! If you want to know more about what I do, send me a message to keep in contact</p>
             
           <form className="space-y-4 max-w-xl mx-auto px-4 py-4">

@@ -148,11 +148,11 @@ export default function PortfolioPage() {
                   `${isMenuOpen ? 'block' : 'hidden'} md:flex absolute md:static top-full left-0 w-full bg-blue-950 md:bg-transparent flex-col md:flex-row items-center md:justify-around py-4 md:py-0`}>
                  
                 {/* Lista de Enlaces */}
-                  <ul className="flex flex-col md:flex-row items-center font-roboto space-y-2 md:space-y-0 md:space-x-6">
-                      <li><a href="#about" onClick={(e) => {e.preventDefault(); scrollToSection("about"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2 text-3xl md:text-2xl"><span className="text-white">{text.about}</span></a></li>
-                      <li><a href="#creative" onClick={(e) => {e.preventDefault(); scrollToSection("creative"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2 text-3xl md:text-2xl"><span className="text-white">{text.creative}</span></a></li>
-                      <li><a href="#professional" onClick={(e) => {e.preventDefault(); scrollToSection("professional"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2 text-3xl md:text-2xl"><span className="text-white">{text.professional}</span></a></li>
-                      <li><a href="#contact" onClick={(e) => {e.preventDefault(); scrollToSection("contact"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2 text-3xl md:text-2xl"><span className="text-white">{text.contact}</span></a></li>
+                  <ul className="flex flex-col md:flex-row items-center font-roboto space-y-2 md:space-y-0 md:space-x-6 ">
+                      <li><a href="#about" onClick={(e) => {e.preventDefault(); scrollToSection("about"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2 text-3xl md:text-2xl font-dm-sans"><span className="text-white">{text.about}</span></a></li>
+                      <li><a href="#creative" onClick={(e) => {e.preventDefault(); scrollToSection("creative"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2 text-3xl md:text-2xl font-dm-sans"><span className="text-white">{text.creative}</span></a></li>
+                      <li><a href="#professional" onClick={(e) => {e.preventDefault(); scrollToSection("professional"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2 text-3xl md:text-2xl font-dm-sans"><span className="text-white">{text.professional}</span></a></li>
+                      <li><a href="#contact" onClick={(e) => {e.preventDefault(); scrollToSection("contact"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2 text-3xl md:text-2xl font-dm-sans"><span className="text-white">{text.contact}</span></a></li>
 
                     {/* Botón de Idioma */}
                       <li className="hidden md:flex">

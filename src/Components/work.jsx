@@ -4,7 +4,7 @@ function Works(){
 
     const personalProyects = [
     {
-      image: 'src/assets/images/game-jams.png',
+      image: '/images/game-jams.png',
       alt: 'Game Jams',
       title: 'Game Jams participation',
       description: 'Using various game engines and programming languages, I have participated in several Game Jams, creating games in a short period of time.',
@@ -20,7 +20,7 @@ function Works(){
       button: 'See Project',
     },*/
     {
-        image: 'src/assets/images/multimedia.png',
+        image: '/images/multimedia.png',
         alt: 'Multimedia Design',
         title: 'Multimedia Design',
         description: 'Although I am passionate about programming and web design, it is worth remembering that I am a Multimedia Designer, so I have also worked in image and video editing.',
@@ -28,7 +28,7 @@ function Works(){
         button: 'See Project',
     },
     {
-        image: 'src/assets/images/pixel-3d.png',
+        image: '/images/pixel-3d.png',
         alt: 'Description game 4',
         title: 'Game 4: Strategy Game',
         description: 'A turn-based strategy game with units, skills and a tactical combat system.',

@@ -4,7 +4,7 @@ function Professional(){
 
      const professionalProyects = [
     {
-      image: 'src/assets/images/Logo Insta.jpg',
+      image: '/images/Logo Insta.jpg',
       alt: 'Website 1',
       title: 'El Tataller Shop',
       description: 'Website for "El Tataller", serves as an online shopping portal, built with WordPress/WooCommerce.',
@@ -12,7 +12,7 @@ function Professional(){
       button: 'See Project',
     },
     {
-      image: 'src/assets/images/codepen.png',
+      image: '/images/codepen.png',
       alt: 'Code Pen Projects',
       title: 'Code Pen',
       description: 'Here you can find the works I have done on Code Pen focused on web utilities.',
@@ -20,7 +20,7 @@ function Professional(){
       button: 'See Projects',
     },
     {
-        image: 'src/assets/images/freecodecamp.png',
+        image: '/images/freecodecamp.png',
         alt: 'Certifications',
         title: 'My Certifications',
         description: 'Here you can find my certifications from courses and training I have completed.',

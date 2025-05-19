@@ -4,7 +4,7 @@ function Profesional(){
 
     const proyectosProfesionales = [
     {
-      image: 'src/assets/images/Logo Insta.jpg',
+      image: '/images/Logo Insta.jpg',
       alt: 'Pagina Web 1',
       title: 'El Tataller Shop',
       description: 'Pagina web de "El Tataller", funciona como portal de compras web, Hecho en Wordpress/Woo Commerce',
@@ -12,7 +12,7 @@ function Profesional(){
       button: 'Ver Proyecto',
     },
     {
-      image: 'src/assets/images/codepen.png',
+      image: '/images/codepen.png',
       alt: 'Proyectos Code Pen',
       title: 'Code Pen',
       description: 'Aquí puedes encontrar los trabajos que he realizado en Code Pen enfocados a utilidades web.',
@@ -20,7 +20,7 @@ function Profesional(){
       button: 'Ver Proyectos',
     },
     {
-        image: 'src/assets/images/freecodecamp.png',
+        image: '/images/freecodecamp.png',
         alt: 'Certificaciones',
         title: 'Mis Certificaciones',
         description: 'Aquí puedes encontrar mis certificaciones de cursos y capacitaciones que he realizado.',

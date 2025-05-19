@@ -110,7 +110,7 @@ export default function PortfolioPage() {
     <div className="font-sans scroll-smooth flex-col bg-gradient-to-b from-sky-400 via-blue-600 to-indigo-950 text-white min-h-screen min-w-screen">
      
       {/* Navbar */}
-      <nav className="fixed top-0 w-full h-25 bg-blue-950 z-50">
+      <nav className="fixed top-0 w-full h-25 bg-blue-950 z-50 ">
         
         
         <ul className="flex flex-wrap justify-center md:justify-around py-4 text-sm md:text-base items-center font-roboto">

@@ -4,7 +4,7 @@ function Trabajos(){
    
    const proyectosPersonales = [
     {
-      image: 'src/assets/images/game-jams.png',
+      image: '/images/game-jams.png',
       alt: 'Game Jams',
       title: 'Participación en Game Jams',
       description: 'Usando diversos motores de juego y lenguajes de programación, he participado en varias Game Jams, creando juegos en un corto período de tiempo.',
@@ -20,7 +20,7 @@ function Trabajos(){
       button: 'Ver Proyecto',
     },*/
     {
-        image: 'src/assets/images/multimedia.png',
+        image: '/images/multimedia.png',
         alt: 'Diseño Multimedia',
         title: 'Diseño Multimedia',
         description: 'Por mas que sea un apasionado por la programación y el diseño web, cabe recordar que soy un Diseñador Multimedia, por lo tanto, también he trabajado en edición de imagen y video.',
@@ -28,7 +28,7 @@ function Trabajos(){
         button: 'Ver Proyecto',
     },
     {
-        image: 'src/assets/images/pixel-3d.png',
+        image: '/images/pixel-3d.png',
         alt: 'Arte',
         title: 'Arte 3D y Pixel Art',
         description: 'Para hacer juegos, también aprendí a realizar el arte, algunas cosas las hago por diversión, otras para probar que si puedo hacerlas.',

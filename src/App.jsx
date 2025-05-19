@@ -121,7 +121,7 @@ export default function PortfolioPage() {
     <div className="font-sans scroll-smooth flex-col bg-gradient-to-b from-sky-400 via-blue-600 to-indigo-950 text-white min-h-screen min-w-screen">
 
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full h-25 bg-blue-950 z-50 px-4 md:px-6 lg:px-8">
+      <nav className="fixed top-0 left-0 w-full h-25 bg-transparent z-50 px-4 md:px-6 lg:px-8">
           <div className="container mx-auto flex items-center justify-between h-full"> 
 
             {/* Logo */}
@@ -149,10 +149,10 @@ export default function PortfolioPage() {
                  
                 {/* Lista de Enlaces */}
                   <ul className="flex flex-col md:flex-row items-center font-roboto space-y-2 md:space-y-0 md:space-x-6">
-                      <li><a href="#about" onClick={(e) => {e.preventDefault(); scrollToSection("about"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2"><span className="text-white">{text.about}</span></a></li>
-                      <li><a href="#creative" onClick={(e) => {e.preventDefault(); scrollToSection("creative"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2"><span className="text-white">{text.creative}</span></a></li>
-                      <li><a href="#professional" onClick={(e) => {e.preventDefault(); scrollToSection("professional"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2"><span className="text-white">{text.professional}</span></a></li>
-                      <li><a href="#contact" onClick={(e) => {e.preventDefault(); scrollToSection("contact"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2"><span className="text-white">{text.contact}</span></a></li>
+                      <li><a href="#about" onClick={(e) => {e.preventDefault(); scrollToSection("about"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2 text-3xl md:text-2xl"><span className="text-white">{text.about}</span></a></li>
+                      <li><a href="#creative" onClick={(e) => {e.preventDefault(); scrollToSection("creative"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2 text-3xl md:text-2xl"><span className="text-white">{text.creative}</span></a></li>
+                      <li><a href="#professional" onClick={(e) => {e.preventDefault(); scrollToSection("professional"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2 text-3xl md:text-2xl"><span className="text-white">{text.professional}</span></a></li>
+                      <li><a href="#contact" onClick={(e) => {e.preventDefault(); scrollToSection("contact"); closeMenu();}} className="hover:text-blue-500 block px-4 py-2 text-3xl md:text-2xl"><span className="text-white">{text.contact}</span></a></li>
 
                     {/* Botón de Idioma */}
                       <li className="hidden md:flex">

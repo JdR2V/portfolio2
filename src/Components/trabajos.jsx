@@ -1,6 +1,5 @@
 import GridTarjetas from './GridTarjetas';
 
-
 function Trabajos(){
    
    const proyectosPersonales = [
@@ -12,14 +11,14 @@ function Trabajos(){
       link: 'https://jdr2v.itch.io',
       button: 'Ver Proyecto',
     },
-    {
+   /* {
       image: '/images/game2.jpg',
       alt: 'Juego Web',
       title: 'Juego: Aventura Web',
       description: 'Un juego de aventura interactivo basado en texto, donde los jugadores toman decisiones que afectan la historia. Inspirado en los primeros juegos de texto en internet.',
       link: 'https://www.ejemplo.com/game2',
       button: 'Ver Proyecto',
-    },
+    },*/
     {
         image: 'src/assets/images/multimedia.png',
         alt: 'Diseño Multimedia',
@@ -29,7 +28,7 @@ function Trabajos(){
         button: 'Ver Proyecto',
     },
     {
-        image: '/images/game4.jpg',
+        image: 'src/assets/images/pixel-3d.png',
         alt: 'Arte',
         title: 'Arte 3D y Pixel Art',
         description: 'Para hacer juegos, también aprendí a realizar el arte, algunas cosas las hago por diversión, otras para probar que si puedo hacerlas.',

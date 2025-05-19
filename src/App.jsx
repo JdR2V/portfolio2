@@ -107,15 +107,15 @@ export default function PortfolioPage() {
 
   {/* Actual content of the website */}
   return (
-    <div className="font-sans scroll-smooth flex-col bg-gradient-to-b from-sky-400 via-blue-600 to-amber-400 text-white min-h-screen min-w-screen">
+    <div className="font-sans scroll-smooth flex-col bg-gradient-to-b from-sky-400 via-blue-600 to-indigo-950 text-white min-h-screen min-w-screen">
      
       {/* Navbar */}
-      <nav className="fixed top-0 w-full bg-transparent z-50 text-blue-950">
+      <nav className="fixed top-0 w-full h-25 bg-blue-950 z-50">
         
         
-        <ul className="flex flex-wrap justify-center md:justify-around py-4 text-sm md:text-base items-center">
+        <ul className="flex flex-wrap justify-center md:justify-around py-4 text-sm md:text-base items-center font-roboto">
         {/* Logo */}
-          <span className="mx-2 md:mx-0"><a href="#home" onClick={(e) => {e.preventDefault(); scrollToSection("home");}} ><img className="h-20/50 w-20/50 py-4" src={logoDark} alt="Logo in dark mode" /></a></span>
+          <span className="mx-2 md:mx-0"><a href="#home" onClick={(e) => {e.preventDefault(); scrollToSection("home");}} ><img className="h-20/50 w-20/50 py-4 max-w-full md:max-w-xs" src={logoDark} alt="Logo in dark mode" /></a></span>
 
         {/* About Link */}
           <li className="mx-2 md:mx-0"><a href="#about" onClick={(e) => {e.preventDefault(); scrollToSection("about");}} className="hover:text-blue-500"><span className="text-white">{text.about}</span></a></li>
@@ -204,9 +204,7 @@ export default function PortfolioPage() {
           <a href="https://www.instagram.com/juandar2v/" target="_blank" rel="noopener noreferrer">
             <FaInstagram size={24} />
           </a>
-          <a href="https://www.behance.net/JdR2" target="_blank" rel="noopener noreferrer">
-            <FaBehance size={24} />
-          </a>
+          
         </div>
         <p className="text-sm text-gray-500">© 2025 Juan Daniel Rubio. All rights reserved.</p>
       </footer>

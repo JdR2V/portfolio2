@@ -121,7 +121,7 @@ export default function PortfolioPage() {
     <div className="font-sans scroll-smooth flex-col bg-gradient-to-b from-sky-400 via-blue-600 to-indigo-950 text-white min-h-screen min-w-screen">
 
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full h-25 bg-blue-950 md:bg-transparent lg:bg:transparent z-50 px-4 md:px-6 lg:px-8">
+      <nav className="fixed top-0 left-0 w-full h-25 bg-blue-950 m:bg-transparent lg:bg:transparent z-50 px-4 md:px-6 lg:px-8">
           <div className="container mx-auto flex items-center justify-between h-full"> 
 
             {/* Logo */}

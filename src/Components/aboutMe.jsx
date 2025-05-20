@@ -72,7 +72,7 @@ function AboutMe(){
     
     return (
         <div className="max-w-auto text-center">
-            <h2 className="text-white text-5xl font-bebas-neue text-shadow-lg/30">About me</h2>
+            <h2 className="text-white text-5xl font-dm-sans text-shadow-lg/30">About me</h2>
             <p>Hi! I'm a web developer with a passion to make new digital and interactive experiences. I love learning about new technologies and hone my skills. I'm also very much in love with working in gamedev, specially participating in Game Jams.</p>
             <p className="p-4">These are some of the software/languages I can work with:</p>
            <MySkills skills={mySkills} />

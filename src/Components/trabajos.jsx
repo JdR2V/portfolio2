@@ -42,7 +42,7 @@ function Trabajos(){
    
     return (
         <div class="max-w-auto items-center justify-center text-center mx-auto px-4">
-            <h2 class="text-white text-5xl pb-4 font-bebas-neue text-shadow-lg/30">Lo que se hacer</h2>
+            <h2 class="text-white text-5xl pb-4 font-dm-sans text-shadow-lg/30">Lo que se hacer</h2>
             <p class="">Estos son algunos de los proyectos que hago por diversión o para explorar nuevas tecnologias:</p>
             <GridTarjetas items={proyectosPersonales} />
         </div>

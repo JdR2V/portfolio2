@@ -13,11 +13,11 @@ function GridTarjetas({ items }) {
           <div className="p-4">
             <h3 className="font-semibold text-lg mb-2 text-gray-800">{item.title}</h3>
             <p className="text-gray-700 text-base">{item.description}</p>
-          <div className="flex flex-col justify-center mt-4"> 
-            <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-blue-500 hover:text-blue-700">
+          <div className="flex flex-col-2 justify-center mt-4"> 
+            <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-blue-500 px-4 hover:text-blue-700">
               {item.button}
             </a>
-            <a href={item.link2} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-blue-500 hover:text-blue-700">
+            <a href={item.link2} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-blue-500 px-1 hover:text-blue-700">
               {item.button2}
             </a>
            </div> 

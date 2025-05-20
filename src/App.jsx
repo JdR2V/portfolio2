@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaArrowUp, FaInstagram, FaGlobe, FaBehance, FaBars, FaTimes } from "react-icons/fa"; // Importamos FaBars (hamburguesa) y FaTimes (cerrar)
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { SlowMo } from "gsap/EasePack";
+//import { SlowMo } from "gsap/EasePack";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -24,15 +24,15 @@ import Profesional from "./Components/profesional";
 import Trabajos from "./Components/trabajos";
 import Contacto from "./Components/contacto";
 
-gsap.registerPlugin(useGSAP,ScrollTrigger,ScrollSmoother,ScrollToPlugin,SplitText,SlowMo);
+gsap.registerPlugin(useGSAP,ScrollTrigger,ScrollSmoother,ScrollToPlugin,SplitText);
 
 
 export default function PortfolioPage() {
   const [showButton, setShowButton] = useState(false);
   const savedLanguage = localStorage.getItem("language") || "es";
   const [language, setLanguage] = useState(savedLanguage);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para controlar el menú móvil
-  const circleRef = useRef(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
+
 
 
 
@@ -79,27 +79,14 @@ export default function PortfolioPage() {
     const newLang = language === "en" ? "es" : "en";
     setLanguage(newLang);
     localStorage.setItem("language", newLang);
-    const circle = circleRef.current;
-
-
-    gsap.to(circle, {
-      scale: 100,
-      duration: 0.2,
-      ease: "power2.easeInOut",
-      onComplete: () => {
-
-        setLanguage(newLang)
-        gsap.to(circle, {
-          scale: 0,
-          duration: 0.9,
-          ease: "power2.inOut",
-        })
-      }
-    })
+    //const circle = circleRef.current;
+    //window.location.reload();
   };
 
+  
 
-  {/* Text content based on language */}
+
+{/* Text content based on language */}
 
   const text = {
     home: language === "en" ? "Home" : "Inicio",
@@ -116,7 +103,7 @@ export default function PortfolioPage() {
   };
 
 
-  {/* Actual content of the website */}
+{/* Actual content of the website */}
   return (
     <div className="font-sans scroll-smooth flex-col bg-gradient-to-b from-sky-400 via-blue-600 to-indigo-950 text-white min-h-screen min-w-screen">
 
@@ -144,8 +131,7 @@ export default function PortfolioPage() {
 
 
              {/* Contenedor de Enlaces de Navegación */}
-              <div className={
-                  `${isMenuOpen ? 'block' : 'hidden'} md:flex absolute md:static top-full left-0 w-full bg-blue-950 md:bg-transparent flex-col md:flex-row items-center md:justify-around py-4 md:py-0`}>
+              <div className={`${isMenuOpen ? 'block' : 'hidden'} md:flex absolute md:static top-full left-0 w-full bg-blue-950 md:bg-transparent flex-col md:flex-row items-center md:justify-around py-4 md:py-0`}>
                  
                 {/* Lista de Enlaces */}
                   <ul className="flex flex-col md:flex-row items-center font-roboto space-y-2 md:space-y-0 md:space-x-6 ">
@@ -166,7 +152,7 @@ export default function PortfolioPage() {
           </div>
 
 
-          {/* Círculo de Animación */}
+          {/* Círculo de Animación 
             
            <div ref={circleRef}
               className="absolute top-1/2 right-25 xl-right-50 lg:right-165 md:right-10 w-10 h-10 bg-blue-600 rounded-full transform -translate-y-1/2" 
@@ -176,7 +162,7 @@ export default function PortfolioPage() {
                   transition: "background 0.5s ease-in-out",
                   zIndex: -1 
               }}>
-            </div>
+            </div>*/}
       </nav>
 
       
@@ -206,11 +192,12 @@ export default function PortfolioPage() {
         <section id="contact" className="min-h-screen py-30 bg-transparent text-center">
           {text.contactDesc}
         </section>
-      </main>
-
-
-
-      {/* Scroll to Top Button */}
+      
+        
+        
+        
+        {/* Scroll to Top Button */}
+        </main>
       {showButton && (
         <button
           onClick={scrollToTop}

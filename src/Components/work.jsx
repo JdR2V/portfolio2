@@ -29,11 +29,13 @@ function Works(){
     },
     {
         image: '/images/pixel-3d.png',
-        alt: 'Description game 4',
-        title: 'Game 4: Strategy Game',
-        description: 'A turn-based strategy game with units, skills and a tactical combat system.',
-        link: 'https://www.ejemplo.com/game4',
-        button: 'See Project',
+        alt: '3D Art',
+        title: '3D/2D Art',
+        description: 'Here are some pieces of art I have made, both in 3D and 2D. I am always looking to improve my skills.',
+        link: 'https://sketchfab.com/JdR2',
+        link2: 'https://www.instagram.com/jdr2v/',
+        button: 'See 3D Art',
+        button2: 'See 2D Art',
     }
   
   ];

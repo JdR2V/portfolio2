@@ -51,10 +51,10 @@ function Welcome() {
 
   return (
     <div>
-      <h2 ref={headingRef} className="text-white text-8xl pb-4 font-dm-sans text-shadow-lg/30">
+      <h2 ref={headingRef} className="text-white text-7xl pb-4 font-dm-sans text-shadow-lg/30">
         Welcome to my portfolio!
       </h2>
-      <p ref={paragraphRef} className="text-white text-xl max-w-2xl">
+      <p ref={paragraphRef} className="text-white text-2xl max-w-2xl text-center">
         I’m a web developer passionate about creating interactive experiences.
       </p>
     </div>

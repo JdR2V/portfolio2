@@ -74,9 +74,9 @@ function SobreMi(){
     return (
             
         <div className="max-w-auto text-center">
-            <h2 className="text-white text-5xl font-dm-sans text-shadow-lg/30">Sobre Mi</h2>
-            <p className="p-4">Hola, soy un desarrollador web apasionado por la creación de experiencias digitales atractivas y funcionales. Me encanta aprender nuevas tecnologías y mejorar mis habilidades constantemente. Otra de mis pasiones es desarollar video juegos, sobretodo participar en Game Jams!</p>
-            <p className="p-4">Estas son algunas de las tecnologias que manejo:</p>
+            <h2 className="text-white text-7xl font-dm-sans text-shadow-lg/30">Sobre Mi</h2>
+            <p className="p-4 lg:text-2xl text-lg">Hola, soy un desarrollador web apasionado por la creación de experiencias digitales atractivas y funcionales. Me encanta aprender nuevas tecnologías y mejorar mis habilidades constantemente. Otra de mis pasiones es desarollar video juegos, sobretodo participar en Game Jams!</p>
+            <p className="pb-14 lg:text-2xl text-lg">Estas son algunas de las tecnologias que manejo:</p>
             <MySkills skills={mySkills} />
         </div>
        

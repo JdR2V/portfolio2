@@ -32,8 +32,8 @@ function Professional(){
 
     return (
         <div className="max-w-auto items-center justify-center text-center mx-auto py-10 px-4">
-            <h2 class="text-white text-5xl pb-4 font-dm-sans text-shadow-lg/30">My experience</h2>
-            <p class="">Here are some works I've done for different clients:</p>
+            <h2 className="text-white text-7xl pb-4 font-dm-sans text-shadow-lg/30">My experience</h2>
+            <p className="p-4 lg:text-2xl text-lg">Here are some works I've done for different clients:</p>
             <GridTarjetas items={professionalProyects} />
 
         </div>

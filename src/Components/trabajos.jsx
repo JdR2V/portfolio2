@@ -35,15 +35,15 @@ function Trabajos(){
         link: 'https://sketchfab.com/JdR2',
         link2: 'https://www.instagram.com/jdr2v/',
         button: 'Ver Arte 3D',
-        button2: 'Ver Pixel Art',
+        button2: 'Ver Arte 2D',
     }
    
   ];
    
     return (
-        <div class="max-w-auto items-center justify-center text-center mx-auto px-4">
-            <h2 class="text-white text-5xl pb-4 font-dm-sans text-shadow-lg/30">Lo que se hacer</h2>
-            <p class="">Estos son algunos de los proyectos que hago por diversión o para explorar nuevas tecnologias:</p>
+        <div className="max-w-auto items-center justify-center text-center mx-auto px-4">
+            <h2 className="text-white text-7xl pb-4 font-dm-sans text-shadow-lg/30">Lo que se hacer</h2>
+            <p className="pb-4 lg:text-2xl text-lg">Estos son algunos de los proyectos que hago por diversión o para explorar nuevas tecnologias:</p>
             <GridTarjetas items={proyectosPersonales} />
         </div>
     )

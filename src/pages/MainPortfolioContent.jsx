@@ -171,9 +171,6 @@ export default function MainPortfolioContent() {
       {/* Footer */}
       <footer className="bg-white text-center py-6 shadow-inner text-black">
         <div className="flex justify-center space-x-6 mb-2">
-          <a href="https://github.com/JdR2V" target="_blank" rel="noopener noreferrer">
-            <FaGithub size={24} />
-          </a>
           <a href="https://www.linkedin.com/in/juan-daniel-rubio/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin size={24} />
           </a>

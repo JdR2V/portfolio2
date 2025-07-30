@@ -4,18 +4,24 @@ function Professional(){
 
      const professionalProyects = [
     {
-      image: '/images/Logo Insta.jpg',
+      /* image: '/images/Logo Insta.jpg',
       alt: 'Website 1',
       title: 'El Tataller Shop',
       description: 'Website for "El Tataller", serves as an online shopping portal, built with WordPress/WooCommerce.',
       link: 'https://eltataller.shop',
-      button: 'See Project',
+      button: 'See Project', */
+      image: '/images/brush-export.png',
+      alt: 'Random Color Palette',
+      title: 'Random Color Palette',
+      description: 'Web app that generates random color palettes, you can copy the HEX code or download the image.',
+      link: 'https://newcolorpalette.netlify.app/',
+      button: 'Ver Proyecto',
     },
     {
       image: '/images/codepen.png',
       alt: 'Code Pen Projects',
       title: 'Code Pen',
-      description: 'Here you can find the works I have done on Code Pen focused on web utilities.',
+      description: "Here you can find some of the ideas I've done on Code Pen focused on web utilities.",
       link: 'https://codepen.io/Juan-Rubio',
       button: 'See Projects',
     },
@@ -26,6 +32,14 @@ function Professional(){
         description: 'Here you can find my certifications from courses and training I have completed.',
         link: 'https://www.linkedin.com/in/juan-daniel-rubio/details/certifications/',
         button: 'See Certifications',
+    },
+    {
+        image: '/images/github.png',
+        alt: 'GitHub',
+        title: 'My GitHub Repositories',
+        description: 'If you want to know more about my personal work, you can see it here.',
+        link: 'https://github.com/JdR2V',
+        button: 'Go to GitHub',
     },
       
   ];

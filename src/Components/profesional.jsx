@@ -17,6 +17,14 @@ function Profesional(){
       link: 'https://newcolorpalette.netlify.app/',
       button: 'Ver Proyecto',
     },
+    {  
+        image: 'images/generator.png',
+        alt: 'Generador de Ideas para Dibujos',
+        title: 'Generador de Ideas para Dibujos',
+        description: 'Una pequeña aplicacion web que genera ideas para dibujos al azar, ideal para artistas que buscan inspiración.',
+        link: 'https://drawingideagenerator.netlify.app/',
+        button: 'Ir al Generador',
+    },
     {
       image: '/images/codepen.png',
       alt: 'Proyectos Code Pen',

@@ -17,6 +17,14 @@ function Professional(){
       link: 'https://newcolorpalette.netlify.app/',
       button: 'Ver Proyecto',
     },
+    {  
+        image: 'images/generator.png',
+        alt: 'Random Drawing Idea Generator',
+        title: 'Random Drawing Idea Generator',
+        description: 'A small web app that generates random drawing ideas, ideal for artists seeking inspiration.',
+        link: 'https://drawingideagenerator.netlify.app/',
+        button: 'Go to Generator',
+    },
     {
       image: '/images/codepen.png',
       alt: 'Code Pen Projects',

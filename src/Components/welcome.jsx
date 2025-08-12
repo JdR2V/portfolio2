@@ -50,7 +50,7 @@ function Welcome() {
   }, []);
 
   return (
-    <div>
+    <div class="flex items-center justify-center flex-col h-screen  p-8">
       <h2 ref={headingRef} className="text-white text-7xl pb-4 font-dm-sans text-shadow-lg/30">
         Welcome to my portfolio!
       </h2>
